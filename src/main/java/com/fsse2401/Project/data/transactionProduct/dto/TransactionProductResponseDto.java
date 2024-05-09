@@ -30,7 +30,6 @@ public class TransactionProductResponseDto {
     public ProductResponseDto getProduct() {
         return product;
     }
-
     public void setProduct(ProductResponseDto product) {
         this.product = product;
     }

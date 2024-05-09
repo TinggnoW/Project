@@ -1,5 +1,6 @@
 package com.fsse2401.Project.api;
 
+import com.fsse2401.Project.config.EnvConfig;
 import com.fsse2401.Project.data.transaction.domain.TransactionResponseData;
 import com.fsse2401.Project.data.transaction.dto.TransactionResponseDto;
 import com.fsse2401.Project.data.transactionProduct.dto.TransactionSuccessDto;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@CrossOrigin({EnvConfig.DEV_BASE_URL, EnvConfig.PROD_BASE_URL, EnvConfig.PROD_S3_BASE_URL})
 @RequestMapping("/transaction")
 public class TransactionApi {
 
@@ -39,7 +41,7 @@ public class TransactionApi {
     }
 
     @PatchMapping("/{tid}/pay")
-    public TransactionSuccessDto patTransaction (@PathVariable int tid, JwtAuthenticationToken jwtToken){
+    public TransactionSuccessDto payTransaction(@PathVariable int tid, JwtAuthenticationToken jwtToken){
         FirebaseUserData firebaseUserData = JwtUtil.getFirebaseUserData(jwtToken);
         transactionService.payTransaction(firebaseUserData,tid);
         return new TransactionSuccessDto();

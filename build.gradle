@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.fsse2401'
-version = '1.0.0'
+version = '1.0.2'
 
 java {
 	sourceCompatibility = '17'
@@ -19,6 +19,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'com.stripe:stripe-java:25.4.0'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'

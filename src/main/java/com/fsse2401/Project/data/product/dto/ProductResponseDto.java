@@ -8,8 +8,7 @@ import java.math.BigDecimal;
 public class ProductResponseDto {
 
         private int pid;
-        private String name;
-        @JsonProperty("image_url")
+        private String productName;
         private String imageUrl;
         private BigDecimal price;
         @JsonProperty("cart_quantity")
@@ -18,7 +17,7 @@ public class ProductResponseDto {
 
         public ProductResponseDto(int pid, String name, String imageUrl, BigDecimal price, String description, int stock) {
             this.pid = pid;
-            this.name = name;
+            this.productName = name;
             this.imageUrl = imageUrl;
             this.price = price;
             this.description = description;
@@ -27,7 +26,7 @@ public class ProductResponseDto {
 
     public ProductResponseDto(TransactionProductResponseData data) {
         this.pid = data.getPid();
-        this.name = data.getName();
+        this.productName = data.getName();
         this.imageUrl = data.getImageUrl();
         this.price = data.getPrice();
         this.description = data.getDescription();
@@ -43,12 +42,12 @@ public class ProductResponseDto {
             this.pid = pid;
         }
 
-        public String getName() {
-            return name;
+        public String getProductName() {
+            return productName;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setProductName(String productName) {
+            this.productName = productName;
         }
 
         public String getImageUrl() {

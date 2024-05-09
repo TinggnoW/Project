@@ -11,11 +11,11 @@ public class GetCartItemDto {
 
     private int pid;
     private String name;
-    @JsonProperty("image_url")
+    @JsonProperty("imageUrl")
     private String imageUrl;
     private BigDecimal price;
     private int stock;
-    @JsonProperty("cart_quantity")
+    @JsonProperty("cartQuantity")
     private int cartQuantity;
 
     public GetCartItemDto(CartItemResponseData data) {

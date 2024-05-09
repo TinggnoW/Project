@@ -19,8 +19,7 @@ import java.util.List;
 
 public class TransactionResponseDto {
     private int tid;
-    @JsonProperty("buyer_uid")
-    private UserResponseDto user;
+    private int uid;
 
     @JsonFormat(pattern = "YYYY-MM-DD' T 'HH:MM:SS")
     private LocalDateTime datetime;
@@ -30,7 +29,7 @@ public class TransactionResponseDto {
 
     public TransactionResponseDto(TransactionResponseData data) {
         this.tid = data.getTid();
-        this.user = new UserResponseDto(data.getUser());
+        this.uid = data.getUser().getUid();
         this.datetime = data.getDatetime();
         this.status = data.getStatus();
         this.total = data.getTotal();
@@ -45,12 +44,12 @@ public class TransactionResponseDto {
         this.tid = tid;
     }
 
-    public UserResponseDto getUser() {
-        return user;
+    public int getUid() {
+        return uid;
     }
 
-    public void setUser(UserResponseDto user) {
-        this.user = user;
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     public LocalDateTime getDatetime() {

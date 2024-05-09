@@ -10,8 +10,8 @@ public class GetProductResponseDto {
     private String imageUrl;
     private BigDecimal productPrice;
     private boolean hasStock;
-
-
+    private String description;
+    private int stock;
 
 
     public GetProductResponseDto(GetProductResponseData data) {
@@ -20,6 +20,8 @@ public class GetProductResponseDto {
         this.productPrice = data.getProductPrice();
         this.imageUrl = data.getImageUrl();
         this.hasStock = data.getStock()>0;
+        this.description = data.getDescription();
+        this.stock = data.getStock();
     }
 
     public int getPid() {
@@ -60,5 +62,21 @@ public class GetProductResponseDto {
 
     public void setHasStock(boolean hasStock) {
         this.hasStock = hasStock;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }
